@@ -23,8 +23,10 @@ class App extends Component {
             <Fragment>
                 <h1>Hola, chikito, move your mouse and watch me</h1>
                 <div className="App" onMouseMove={this.handleMove}>
-                    <Cat position={this.state} />
-                    <Box position={this.state} />
+                    <Box
+                        render={position => <Cat position={position} />}
+                        position={this.state}
+                    />
                 </div>
             </Fragment>
         )
